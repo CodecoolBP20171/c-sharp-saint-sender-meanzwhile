@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{62018E41-00FA-4894-A81C-0FE90BCA762D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>SaintSender</RootNamespace>
     <AssemblyName>SaintSender</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>

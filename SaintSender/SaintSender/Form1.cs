@@ -23,6 +23,7 @@ namespace SaintSender
         static List<Mail> mails;
         static List<Mail> newMails;
         static System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
+        private const int TIMERINTERVAL = 5000;
 
         public Form1()
         {
@@ -35,7 +36,7 @@ namespace SaintSender
 
             myTimer.Tick += new EventHandler(TimerEventProcessorAsync);
 
-            myTimer.Interval = 5000;
+            myTimer.Interval = TIMERINTERVAL;
             myTimer.Start();
         }
 
@@ -66,14 +67,17 @@ namespace SaintSender
 
         private void BackupButton_Click(object sender, EventArgs e)
         {
+            int count = 0;
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 bool asd = (bool)dataGridView1.Rows[i].Cells[0].Value;
                 if (asd)
                 {
                     mails[i].SerializeAsync();
+                    count++;
                 }
             }
+            MessageBox.Show(String.Format("Successfully saved {0} Emails.", count));
         }
 
         private void RestoreButton_Click(object sender, EventArgs e)

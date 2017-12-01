@@ -219,7 +219,6 @@ namespace SaintSender
         public static void DeleteMessage(string messageID)
         {
             var service = Connection();
-            Console.WriteLine(messageID);
             service.Users.Messages.Trash("me", messageID).Execute();
         }
     }
